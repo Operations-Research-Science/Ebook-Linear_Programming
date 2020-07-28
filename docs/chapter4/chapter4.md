@@ -34,5 +34,10 @@ $$
 
 ## 本章参考文献
 
+[1] L Winston, Wayne & B Goldberg, Jeffrey. (2004). Operations research: applications and algorithms.
 
+[2] Frederick S. Hillier, Gerald J. Lieberman. Introduction to Operations Research (9th).
 
+[3] Vijay V. Vazirani. (2003). Approximation Algorithms.
+
+[4] 为什么我们要考虑线性规划的对偶问题？-知乎https://www.zhihu.com/question/26658861
