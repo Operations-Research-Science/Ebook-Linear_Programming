@@ -18,6 +18,14 @@ $$
 \end{alignat}
 $$
 
+$$
+\begin{array}{lll}
+\dot{x} = \sigma(y-x) \\ 
+\dot{y} = \rho x-y-xz \\
+\dot{z} = -\beta z+xy
+\end{array}
+$$
+
 其中$\textbf{c}$为$1\times n$向量，$\textbf{x}$为$n\times 1$向量，$A$为$m\times n$矩阵，$\textbf{b}$为$m\times 1$向量。
 
 ## 4.2 对偶原理
