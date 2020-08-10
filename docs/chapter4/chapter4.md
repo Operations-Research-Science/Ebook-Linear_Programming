@@ -7,10 +7,18 @@
 $$
 \begin{alignat}{2}
 max\quad & z=\textbf{cx}\\
-mbox{s.t.}\quad
+mbox{s.t.}\quad \\
 A\textbf{x} \le \textbf{b}\\
-textbf{x} \geq 0  &{}&
+textbf{x} \geq 0  &{}& \\
 \end{alignat}
+$$
+
+$$
+\begin {split}
+y &= (a + b)^2 \\
+  &= a^2 + b^2 + 2ab\\
+  &= 0
+\end {split}
 $$
 
 
