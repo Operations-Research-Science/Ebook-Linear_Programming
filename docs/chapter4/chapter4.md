@@ -13,16 +13,7 @@ textbf{x} \geq 0  &{}& \\
 \end{alignat}
 $$
 
-$$
-\begin {split}
-y &= (a + b)^2 \\
-  &= a^2 + b^2 + 2ab\\
-  &= 0
-\end {split}
-$$
-
-
-其中$\textbf{c}$为$1\times n$向量，$\textbf{x}$为$n\times 1$向量，$A$为$m\times n$矩阵，$\textbf{b}$为$m\times 1$向量。
+中$\textbf{c}$为$1\times n$向量，$\textbf{x}$为$n\times 1$向量，$A$为$m\times n$矩阵，$\textbf{b}$为$m\times 1$向量。
 
 ## 4.2 对偶原理
 
