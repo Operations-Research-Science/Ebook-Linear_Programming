@@ -6,13 +6,13 @@
 
 $$
 \begin{alignat}{2}
-\max\quad & z=\textbf{cx} \\\\
+\max\quad  z=\textbf{cx} \\\\
 \text{s.t.}\quad A\textbf{x} \le \textbf{b} \\\\
 \textbf{x} \geq 0  &{}& \\\\
 \end{alignat}
 $$
 
-中$\textbf{c}$为$1\times n$向量，$\textbf{x}$为$n\times 1$向量，$A$为$m\times n$矩阵，$\textbf{b}$为$m\times 1$向量。
+其中$\textbf{c}$为$1\times n$向量，$\textbf{x}$为$n\times 1$向量，$A$为$m\times n$矩阵，$\textbf{b}$为$m\times 1$向量。
 
 ## 4.2 对偶原理
 
