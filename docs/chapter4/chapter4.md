@@ -52,13 +52,13 @@ $$
 $$
 \textbf{y}^TA\textbf{x} \le \textbf{y}^T\textbf{b}
 $$
-如果找到一个$\textbf{y}^T$满足$$c\le\textbf{y}^TA$$，那么对所有可行解$$\textbf{x}$$，都有：
+如果找到一个$\textbf{y}^T$满足$c\le\textbf{y}^TA$$，那么对所有可行解$$\textbf{x}$，都有：
 $$
 \textbf{cx}\le\textbf{y}^TA\textbf{x}\le\textbf{y}^T\textbf{b}
 $$
-这意味着，$$\textbf{y}^T\textbf{b}$$就是**原问题的一个上界**。
+这意味着，$\textbf{y}^T\textbf{b}$就是**原问题的一个上界**。
 
-换言之，所有满足$$c\le\textbf{y}^TA$$的$$\textbf{y}$$对应的$$\textbf{y}^T\textbf{b}$$，都是原问题的上界。
+换言之，所有满足$c\le\textbf{y}^TA$$的$$\textbf{y}$$对应的$$\textbf{y}^T\textbf{b}$，都是原问题的上界。
 
 那么，最小的上界就是原问题目标函数的最优值。在所有的上界中，我们要找到最小的那一个，这个问题表述出来就是：
 $$
