@@ -66,7 +66,7 @@ $$
 $$
 可以发现，**这就是对偶问题的形式**。反之，如果原问题是求目标函数最小化，那么对偶问题就是在寻找原问题目标函数的下界。**图4.1**可以帮助理解：26是目标函数最优值，两个问题**分别从左右两侧逼近最优值**。
 
-![img](D:\Ebook-Linear_Programming\docs\chapter4\clip_image043.jpg)
+![](./img/4-1.jpg)
 
 <center>图4.1 原问题和对偶问题从两侧逼近最优解</center>
 
@@ -112,17 +112,17 @@ $$
 $$
 在向量形式中，可以直观看出原问题和对偶问题的系数存在对应关系，例如：原问题目标函数的系数向量的转置$\textbf{c}^T$，是对偶问题约束的右侧向量；原问题约束的系数矩阵的转置$A^T$，是对偶问题约束的系数矩阵。借用上一节的实例，对应关系如图4.2： 
 
-![img](D:\Ebook-Linear_Programming\docs\chapter4\clip_image057.jpg)
+![](./img/4-2.jpg)
 
 <center>图4.2 原问题与对偶问题对应关系</center>
 
 如果我们面对的是一般形式问题，可以使用**表格法**便捷地写出对偶问题。图4.3中，**由上至下按行读**是**原问题**的约束和目标函数，**由左至右按列读**是**对偶问题**的约束和目标函数。
 
-![img](D:\Ebook-Linear_Programming\docs\chapter4\clip_image059.jpg)
+![](./img/4-3a.jpg)
 
 <center>(a)标示max问题</center>
 
-![img](D:\Ebook-Linear_Programming\docs\chapter4\clip_image061.jpg)
+![](./img/4-3b.jpg)
 
 <center>(b) 标示min问题</center>
 
