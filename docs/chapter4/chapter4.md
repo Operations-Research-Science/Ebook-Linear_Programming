@@ -378,6 +378,8 @@ $$
 其中，$\textbf{a}_j: m\times1$特指变量$\textbf{x}_j$的约束系数向量。
 
 由此，我们可以把线性规划改写为：
+
+
 $$
 \begin{alignat}{2}\max & \quad z=\textbf{c}_{BV}\textbf{x}_{BV}+\textbf{c}_{NBV}\textbf{x}_{NBV}
 \\\\\text{s.t.} & \quad B\textbf{x}_{BV}+N\textbf{X}_{NBV} = \textbf{b} 
@@ -385,11 +387,15 @@ $$
 \end{alignat}
 $$
 约束左乘$B^{-1}$，得到：
+
+
 $$
 B^{-1}B\textbf{x}_{BV}+B^{-1}N\textbf{x}_{NBV}=B^{-1}\textbf{b}
 \\\\ \Longleftrightarrow \textbf{x}_{BV}=B^{-1}\textbf{b}-B^{-1}N\textbf{x}_{NBV}
 $$
 用这一等式替代目标函数中的$\textbf{x}_{BV}$，则目标函数中只包含参数和非基本变量，变更为如下形式：
+
+
 $$
 \begin{alignat}{2}\max & \quad z=\textbf{c}_{BV}(B^{-1}\textbf{b}-B^{-1}N\textbf{x}_{NBV})+\textbf{c}_{NBV}\textbf{x}_{NBV} 
 \\\\ & \quad \quad = \textbf{c}_{BV}B^{-1}\textbf{b}-(\textbf{c}_{BV}B^{-1}N-\textbf{c}_{NBV})\textbf{x}_{NBV}
