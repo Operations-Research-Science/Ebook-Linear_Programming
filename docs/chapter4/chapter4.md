@@ -44,7 +44,8 @@ $$
 
 以原问题是求**目标函数最大化**为例，我们以向量形式写线性规划：
 $$
-\begin{alignat}{2}\max\quad  z=\textbf{cx} \\\\\text{s.t.}\quad A\textbf{x} \le \textbf{b} \\\\\textbf{x} \geq 0  &{}& \\\\\end{alignat}
+\begin{alignat}{2}\max\quad  z=\textbf{cx} \nonumber
+\\\\\text{s.t.}\quad A\textbf{x} \le \textbf{b} \\\\\textbf{x} \geq 0  &{}& \\\\\end{alignat}
 $$
 其中$\textbf{c}$为$1\times n$向量，$\textbf{x}$为$n\times 1$向量，$A$为$m\times n$矩阵，$\textbf{b}$为$m\times 1$向量。
 
