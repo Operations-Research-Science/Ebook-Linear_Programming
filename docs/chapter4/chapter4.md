@@ -380,9 +380,9 @@ $$
 由此，我们可以把线性规划改写为：
 $$
 \begin{alignat}{2}\max & \quad z=\textbf{c}_{BV}\textbf{x}_{BV}+\textbf{c}_{NBV}\textbf{x}_{NBV}
-\\\\\text{s.t.}&\quad B\textbf{x}_{BV}+N\textbf{X}_{NBV} = \textbf{b} 
+\\\\\text{s.t.} & \quad B\textbf{x}_{BV}+N\textbf{X}_{NBV} = \textbf{b} 
 \\\\ & \quad \textbf{x}_{BV}, \textbf{x}_{NBV} \geq 0   
-\\\\\end{alignat}
+\end{alignat}
 $$
 约束左乘$B^{-1}$，得到：
 $$
