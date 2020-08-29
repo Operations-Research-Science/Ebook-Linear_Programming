@@ -386,6 +386,7 @@ $$
 \\\\ & \quad \textbf{x}_{BV}, \textbf{x}_{NBV} \geq 0   
 \end{alignat}
 $$
+
 约束左乘$B^{-1}$，得到：
 
 
