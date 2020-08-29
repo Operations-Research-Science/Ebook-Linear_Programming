@@ -8,7 +8,7 @@
 
 线性规划里，每个原始线性规划问题，即**原问题（primal problem）**都有相应的另一个线性规划问题——**对偶问题（dual problem）**，而对偶的对偶又是原问题本身。既然我们已经知道用单纯形法去求解原问题了，为什么还要了解它的对偶问题呢？哪些情况下，考虑对偶问题有助于求解原问题？下面我们从两个角度阐述。
 
-**1.**   **经济学角度**
+**1.经济学角度**
 
 这是一个在教材上被广泛使用的解释：如果原问题是企业A拥有m种资源（有m个约束），计划生产n种产品（有n个变量），目标是最大化总收入；那么对偶问题就是，企业B想要收购这些资源，需要确定m种资源的报价（有m个变量），目标是最小化总成本，但企业A只有在卖资源的收益不低于卖产品的时候才会同意卖资源（n个约束）。
 
@@ -18,27 +18,27 @@
 
 **原问题**的线性规划为：
 $$
-\begin{alignat}{2}\max\quad  & 60x_1+30x_2+20x_3 （卖出三种产品的总收入） 
-\\\\\text{s.t.}\quad & 8x_1+6x_2+x_3\le48 （木材总量约束）
-\\\\ \quad & 4x_1+2x_2+1.5x_3\le20 （制造工时总量约束）
-\\\\ \quad & 2x_1+1.5x_2+0.5x_3\le8 （测试工时总量约束）
-\\\\ \quad &x_1,x_2,x_3\ge0
+\begin{alignat}{2}\max\quad  & 60x_1+30x_2+20x_3 \nonumber（卖出三种产品的总收入） 
+\\\\\text{s.t.}\quad & 8x_1+6x_2+x_3\le48 \nonumber（木材总量约束）
+\\\\ \quad & 4x_1+2x_2+1.5x_3\le20 \nonumber （制造工时总量约束）
+\\\\ \quad & 2x_1+1.5x_2+0.5x_3\le8  \nonumber（测试工时总量约束）
+\\\\ \quad &x_1,x_2,x_3\ge0 \nonumber
 \\\\\end{alignat}
 $$
 如果企业B想要收购木材、制造工时、测试工时这三样资源，就必须为每项资源报价，并且满足企业A愿意出让资源的条件，即让企业A获得不低于自己制造产品的收入。求三项资源的单位报价各为多少时，企业B能够最小化总成本。
 
 那么，可以写出**对偶问题**的线性规划是：
 $$
-\begin{alignat}{2}\min\quad  & 48y_1+20y_2+8y_3 （收购三种资源的总成本） 
-\\\\\text{s.t.}\quad & 8y_1+4y_2+2y_3\ge60 （把足够制造一个书架的资源卖掉，获得的收入必须不低于书架售价）
-\\\\ \quad & 6y_1+2y_2+1.5y_3\ge30 （把足够制造一张桌子的资源卖掉，获得的收入必须不低于桌子售价）
-\\\\ \quad & y_1+1.5y_2+0.5y_3\ge20 （把足够制造一把椅子的资源卖掉，获得的收入必须不低于椅子售价）
-\\\\ \quad &y_1,y_2,y_3\ge0 （分别是一单位木材、制造工时和测试工时的报价）
+\begin{alignat}{2}\min\quad  & 48y_1+20y_2+8y_3 \nonumber（收购三种资源的总成本） 
+\\\\\text{s.t.}\quad & 8y_1+4y_2+2y_3\ge60 \nonumber（把足够制造一个书架的资源卖掉，获得的收入必须不低于书架售价）
+\\\\ \quad & 6y_1+2y_2+1.5y_3\ge30 \nonumber（把足够制造一张桌子的资源卖掉，获得的收入必须不低于桌子售价）
+\\\\ \quad & y_1+1.5y_2+0.5y_3\ge20 \nonumber（把足够制造一把椅子的资源卖掉，获得的收入必须不低于椅子售价）
+\\\\ \quad &y_1,y_2,y_3\ge0 \nonumber（分别是一单位木材、制造工时和测试工时的报价）
 \\\\\end{alignat}
 $$
 上面的例子，旨在从实际经济问题的角度解释**「每一个线性规划问题都存在一个与其对偶的问题」**这句话的合理性。
 
-**2.**   **数学角度**
+**2.数学角度**
 
 从数学角度，对偶问题可以被理解为**寻找原问题目标函数上界（或下界）**的问题。
 
@@ -55,13 +55,13 @@ $$
 $$
 \textbf{y}^TA\textbf{x} \le \textbf{y}^T\textbf{b}
 $$
-如果找到一个$\textbf{y}^T$满足$c\le\textbf{y}^TA$$，那么对所有可行解$$\textbf{x}$，都有：
+如果找到一个$\textbf{y}^T$满足$\textbf{c}\le\textbf{y}^TA$$，那么对所有可行解$$\textbf{x}$，都有：
 $$
 \textbf{cx}\le\textbf{y}^TA\textbf{x}\le\textbf{y}^T\textbf{b}
 $$
 这意味着，$\textbf{y}^T\textbf{b}$就是**原问题的一个上界**。
 
-换言之，所有满足$c\le\textbf{y}^TA$$的$$\textbf{y}$$对应的$$\textbf{y}^T\textbf{b}$，都是原问题的上界。
+换言之，所有满足$\textbf{c}\le\textbf{y}^TA$$的$$\textbf{y}$$对应的$$\textbf{y}^T\textbf{b}$，都是原问题的上界。
 
 那么，最小的上界就是原问题目标函数的最优值。在所有的上界中，我们要找到最小的那一个，这个问题表述出来就是：
 $$
@@ -107,13 +107,19 @@ $$
 
 以目标函数最大化问题为例，**原问题的一般形式**指的是变量全部非负、约束全部为小于等于约束的线性规划，向量形式如下：
 $$
-\begin{alignat}{2}\max\quad  z=\textbf{cx} \\\\\text{s.t.}\quad A\textbf{x} \le \textbf{b} \\\\\textbf{x} \geq 0  &{}& \\\\\end{alignat}
+\begin{alignat}{2}\max & \quad  z=\textbf{cx} \nonumber
+\\\\\text{s.t.}&  \quad A\textbf{x} \le \textbf{b} \nonumber
+\\\\ &\quad  \textbf{x} \geq 0  \nonumber 
+\end{alignat}
 $$
 根据上一小节内容，其对偶问题的含义是：在原问题目标函数的所有上界中，找到最小的一个。相应**对偶问题的一般形式**，指的是变量全部非负、约束全部为大于等于约束的线性规划，向量形式如下：
 $$
-\begin{alignat}{2}\min\quad  w=\textbf{b}^T\textbf{y} \\\\\text{s.t.}\quad A^T\textbf{y} \ge \textbf{c}^T \\\\\textbf{y} \geq 0  &{}& \\\\\end{alignat}
+\begin{alignat}{2}\min & \quad  w=\textbf{b}^T\textbf{y} \nonumber
+\\\\\text{s.t.}& \quad A^T\textbf{y} \ge \textbf{c}^T \nonumber
+\\\\ & \quad \textbf{y} \geq 0  \nonumber
+\end{alignat}
 $$
-在向量形式中，可以直观看出原问题和对偶问题的系数存在对应关系，例如：原问题目标函数的系数向量的转置$\textbf{c}^T$，是对偶问题约束的右侧向量；原问题约束的系数矩阵的转置$A^T$，是对偶问题约束的系数矩阵。借用上一节的实例，对应关系如图4.2： 
+在向量形式中，可以直观看出原问题和对偶问题的系数存在对应关系，例如：原问题目标函数的系数向量的转置$\textbf{c}^T$，是对偶问题约束的右侧向量，原问题中约束条件中的向量$\textbf{b}$则出现在对偶问题的目标函数中；原问题约束的系数矩阵的转置$A^T$，是对偶问题约束的系数矩阵。借用上一节的实例，对应关系如图4.2： 
 
 ![](./img/4-2.jpg)
 
@@ -123,7 +129,7 @@ $$
 
 ![](./img/4-3a.jpg)
 
-<center>(a)标示max问题</center>
+<center>(a) 标示max问题</center>
 
 ![](./img/4-3b.jpg)
 
@@ -139,7 +145,7 @@ $$
 
 ②如果有$=$约束，则先转换为一个$\le$约束和一个$\ge$约束，再按①把$\ge$约束转换为$\le$约束。例如，如果存在约束$x_1+x_2=2$，等价于同时满足$x_1+x_2 \le 2$和$x_1+x_2\ge2$，后者再写成$-x_1-x_2\le-2$。
 
-③如果有无符号限制(unrestricted in sign, urs)的变量，用两个符号限制为$\ge0$的变量相减表示，转换关系为：$x(x\quad urs)=x^{'}-x^{''}(x^{'},x^{''}\ge0)$。
+③如果有无符号限制(unrestricted in sign, **urs**)的变量，用两个符号限制为$\ge0$的变量相减表示，转换关系为：$x(x\quad \textbf{urs})=x^{'}-x^{''}(x^{'},x^{''}\ge0)$。
 
 **3.   总结**
 
@@ -169,29 +175,23 @@ $$
 
 这一节着重讲述**原问题和对偶问题的解之间的关系**，即对偶原理。通过对偶原理，我们可以更好地理解如何借助对偶问题的解获得原问题的解。本节先概述**弱对偶定理、强对偶定理和互补松弛定理**的内容，再逐个进行说明。
 
-以原问题是最大化问题为例，**弱对偶定理**是与可行解相关的一个定理：**当对偶问题有任一可行解$\textbf{y}_0$时，其相应的对偶问题目标函数值$w_0$是原问题目标函数值的上界**。换句话说，对原问题任一可行解$\textbf{x}_0$对应的原问题目标函数$z_0$，一定有$z_0\le w_0$成立。实际上，在前一节我们已经证明过这一定理，它解释了为什么每一个线性规划都一定存在对偶问题。
+以原问题是最大化问题为例，**弱对偶定理**是与可行解相关的一个定理：**当对偶问题有任一可行解$\textbf{y}_0$时，其相应的对偶问题目标函数值$w_0$是原问题目标函数值的上界**。换句话说，对原问题任一可行解$\textbf{x}_0$对应的原问题目标函数$z_0$，一定有$z_0\le w_0$成立。在4.1.1节解释为什么每一个线性规划都一定存在对偶问题时，我们已经简单说明过这一定理，接下来将在4.2.1节给出更详细的证明。
 
 **强对偶定理**则与最优解相关：**当已知原问题最优解时，对偶问题也一定有最优解，且两个问题最优解的目标函数值相等**。
 
 当原问题和对偶问题各自有一个可行解$\textbf{x}_0$和$\textbf{y}_0$时，要判断$\textbf{x}_0$和$\textbf{y}_0$是否为最优解，就涉及**互补松弛定理**：$\textbf{x}_0$和$\textbf{y}_0$分别为原问题和对偶问题最优解的充要条件是，
 $$
-\textbf{y}_0s=\textbf{y}_0(A\textbf{x}_0-\textbf{b})=0
+\textbf{y}_0\textbf{s}=\textbf{y}_0(A\textbf{x}_0-\textbf{b})=0
 \\\\\textbf{x}_0^T\textbf{e}=\textbf{x}_0^T(A^T\textbf{y}_0-\textbf{c}^T)=0
 $$
 其中$\textbf{s}$和$\textbf{e}$分别为原问题和对偶问题的松弛变量(slack variables)和剩余变量(excess variables)。
 
-借助这些定理，给出对偶问题的最优解，便可求得原问题的最优解；给出对偶问题的可行解，也可限定原问题最优解的范围，反之亦然。接下来对每个定理进行详细说明。
+借助这些定理，**给出对偶问题的最优解，便可求得原问题的最优解；给出对偶问题的可行解，也可限定原问题最优解的范围**，反之亦然。接下来对每个定理进行详细说明。
 
 ### 4.2.1 弱对偶定理
 
-以原问题是最大化问题为例，原问题的一般形式如下：
-$$
-\begin{alignat}{2}\max\quad  z=\textbf{cx} \\\\\text{s.t.}\quad A\textbf{x} \le \textbf{b} \\\\\textbf{x} \geq 0  &{}& \\\\\end{alignat}
-$$
-对偶问题的一般形式为：
-$$
-\begin{alignat}{2}\min\quad  w=\textbf{b}^T\textbf{y} \\\\\text{s.t.}\quad A^T\textbf{y} \ge \textbf{c}^T \\\\\textbf{y} \geq 0  &{}& \\\\\end{alignat}
-$$
+以原问题是最大化问题为例，原问题和对偶问题的一般形式见4.1.3节。
+
 已知原问题和对偶问题各自有一个可行解$\textbf{x}_0$和$\textbf{y}_0$。由于$\textbf{y}_0$为非负向量，因此在原问题约束两边同乘$\textbf{y}_0$，得到以下公式，对任意$\textbf{x}$都成立：
 $$
 \textbf{y}_0^TA\textbf{x}\le\textbf{y}_0^T\textbf{b}
@@ -200,11 +200,13 @@ $$
 $$
 \textbf{x}_0^TA^T\textbf{y} \ge \textbf{x}_0^T\textbf{c}^T \Longleftrightarrow  \textbf{y}^TA\textbf{x}_0\ge\textbf{cx}_0
 $$
-对以上公式，分别代入$\textbf{x}_0$和$\textbf{y}_0$后合并，得到：
+对以上两个公式，分别代入$\textbf{x}_0$和$\textbf{y}_0$后合并，得到：
 $$
-\textbf{cx}_0 \le \textbf{y}_0^TA\textbf{x}_0 \le \textbf{y}_0^T\textbf{b}  \Longleftrightarrow  z_0 \ge w_0
+\textbf{cx}_0 \le \textbf{y}_0^TA\textbf{x}_0 \le \textbf{y}_0^T\textbf{b}  \Longleftrightarrow  z_0 \le w_0
 $$
-即原问题目标函数$z_0$一定不高于对偶问题目标函数$w_0$，弱对偶定理得以证明。基于弱对偶定理，还可以得到**两个推论**：
+即原问题目标函数$z_0$一定不高于对偶问题目标函数$w_0$，弱对偶定理得以证明。
+
+基于弱对偶定理，还可以得到**两个推论**：
 
 1. （最优性）如果原问题和对偶问题各自有一个可行解$\textbf{x}_0$和$\textbf{y}_0$，且相应的目标函数值$z_0=w_0$，那么$\textbf{x}_0$和$\textbf{y}_0$分别是原问题和对偶问题的最优解。
 
@@ -226,7 +228,7 @@ $$
 
 互补松弛定理是关联原问题和对偶问题解的重要定理，在证明之前，首先定义原问题的松弛变量$\textbf{s}$和对偶问题的剩余变量$\textbf{e}$。
 
-已知$\textbf{x}_0$是原问题的一个可行解，松弛变量$\textbf{s}$描述的是$\textbf{x}_0$代入原问题时约束的“松弛”程度。将约束$A\textbf{x}\le\textbf{b}$右边的常量$\textbf{b}$理解为资源，当约束是以等号成立时，说明此时资源正好全部用完，没有富余；当约束时以不等号成立时，说明此时资源还没有被全部利用，存在富余，有一定的“松弛”。同理，剩余变量$\textbf{e}$描述的是对偶问题约束$A^T\textbf{y}\ge\textbf{c}^T$的“剩余”程度，两者的计算公式如下：
+已知$\textbf{x}_0$是原问题的一个可行解，松弛变量$\textbf{s}$描述的是$\textbf{x}_0$代入原问题时约束的“松弛”程度。将约束$A\textbf{x}\le\textbf{b}$右边的常量$\textbf{b}$理解为资源，**当约束是以等号成立时，说明此时资源正好全部用完，没有富余；当约束时以不等号成立时，说明此时资源还没有被全部利用，存在富余，有一定的“松弛”**。同理，剩余变量$\textbf{e}$描述的是对偶问题约束$A^T\textbf{y}\ge\textbf{c}^T$的“剩余”程度，两者的计算公式如下：
 $$
 \textbf{s}=A\textbf{x}_0-\textbf{b}
 \\\\ \textbf{e}=A^T\textbf{y}_0-\textbf{c}^T
@@ -247,7 +249,7 @@ $$
 - 对偶问题第j个剩余变量大于0，此时原问题第j个变量等于0；
 - 原问题第j个变量大于0，此时对偶问题第j个剩余变量等于0。
 
-上述四种情况意味着，如果原问题/对偶问题中任一个约束时是以非等号形式成立的（nonbinding，不具约束力，即$\textbf{s}_i$或$\textbf{e}_j$大于0），那么在对偶问题/原问题中该约束对应的变量就一定为0，因此这一定理称为互补松弛。通过互补松弛定理，给出原问题的最优解，便可求得其对偶问题的最优解，反之亦然。
+上述四种情况意味着，**如果原问题/对偶问题中任一个约束时是以非等号形式成立的**（nonbinding，不具约束力，即$\textbf{s}_i$或$\textbf{e}_j$大于0），**那么在对偶问题/原问题中该约束对应的变量就一定为0**，因此这一定理称为互补松弛。通过互补松弛定理，给出原问题的最优解，便可求得其对偶问题的最优解，反之亦然。
 
 本节介绍了弱对偶定理、强对偶定理和互补松弛定理，阐述了原问题和对偶问题的解之间的关系。下一节「对偶单纯形法」将进一步利用这些关系，介绍利用对偶可行性逐步搜索出原始问题最优解的方法。
 
@@ -293,10 +295,10 @@ $$
 
 **例题4.1** 用对偶单纯形法解下列问题：
 $$
-\begin{alignat}{2}\max & \quad  z=-4y_1-12y_2-18y_3
-\\\\\text{s.t.} & \quad -y_1-3y_3+y_4=-3 
-\\\\ & \quad -2y_2-2y_3+y_5=-5
-\\\\ & \quad y_1,y_2,y_3,y_4,y_5 \ge 0
+\begin{alignat}{2}\max & \quad  z=-4y_1-12y_2-18y_3 \nonumber
+\\\\\text{s.t.} & \quad -y_1-3y_3+y_4=-3 \nonumber
+\\\\ & \quad -2y_2-2y_3+y_5=-5 \nonumber
+\\\\ & \quad y_1,y_2,y_3,y_4,y_5 \ge 0 \nonumber
 \end{alignat}
 $$
 其中$y_4$和$y_5$为松弛变量。
@@ -311,11 +313,11 @@ $$
 
 **步骤3 迭代**
 
-1）从$BV$中确定离开变量：基本变量中$y_4$和$y_5$都为负值，其中$y_5$的绝对值更大，因此选择$y_5$作为离开变量；
+（1）从$BV$中确定离开变量：基本变量中$y_4$和$y_5$都为负值，其中$y_5$的绝对值更大，因此选择$y_5$作为离开变量；
 
-2）从$NBV$中确定进入变量：$y_5$所在的约束中系数为负的非基本变量是$y_2$和$y_3$，两者的（目标函数系数/在该约束中的系数）比值绝对值分别是|12/-2|和|18/-2|，前者更小，所以选择$y_2$作为进入变量。
+（2）从$NBV$中确定进入变量：$y_5$所在的约束中系数为负的非基本变量是$y_2$和$y_3$，两者的（目标函数系数/在该约束中的系数）比值绝对值分别是|12/-2|和|18/-2|，前者更小，所以选择$y_2$作为进入变量。
 
-3） 由此产生新一组基本解：$BV=\{y_4,y_2\}$，$NBV=\{y_1,y_5,y_3\}$。返回步骤2进行可行检验。完整求解过程见图4.4，经过两次迭代后找到最优解。
+（3） 由此产生新一组基本解：$BV=\{y_4,y_2\}$，$NBV=\{y_1,y_5,y_3\}$。返回步骤2进行可行检验。完整求解过程见图4.4，经过两次迭代后找到最优解。
 
 ![img](./img/4-4.jpg)
 
@@ -331,11 +333,11 @@ $$
 
 考虑一个玩具制造问题。$x_1$和$x_2$分别表示每周soldiers和trains两种玩具的制造数量，两种玩具的利润分别是3元和2元，目标函数是最大化利润，有Finishing、Carpentry和Demand三项资源约束。线性规划如下：
 $$
-\begin{alignat}{2}\max & \quad  z=3x_1+2x_2
-\\\\\text{s.t.} & \quad 2x_1+x_2\le100 \quad (Finishing \quad constraint)
-\\\\ & \quad x_1+x_2\le80 \quad (Carpentry \quad constraint)
-\\\\ & \quad x_1\le40 \quad (Demand \quad constraint)
-\\\\ & \quad x_1, x_2\ge0
+\begin{alignat}{2}\max & \quad  z=3x_1+2x_2 \nonumber
+\\\\\text{s.t.} & \quad 2x_1+x_2\le100 \quad (Finishing \quad constraint)\nonumber
+\\\\ & \quad x_1+x_2\le80 \quad (Carpentry \quad constraint)\nonumber
+\\\\ & \quad x_1\le40 \quad (Demand \quad constraint)\nonumber
+\\\\ & \quad x_1, x_2\ge0\nonumber
 \end{alignat}
 $$
 上述线性规划的最优解是$x_1=20, x_2=60, z=180$，即生产20个soldiers和60个trains，总收入可以达到最高值180。
@@ -366,7 +368,10 @@ $$
 
 首先回顾标准形式线性规划问题：
 $$
-\begin{alignat}{2}\max\quad  z=\textbf{cx} \\\\\text{s.t.}\quad A\textbf{x} \le \textbf{b} \\\\\textbf{x} \geq 0  &{}& \\\\\end{alignat}
+\begin{alignat}{2}\max & \quad  z=\textbf{cx} \nonumber
+\\\\\text{s.t.} & \quad A\textbf{x} \le \textbf{b} \nonumber
+\\\\ & \quad \textbf{x} \geq 0 \nonumber 
+\end{alignat}
 $$
 按照基本变量和非基本变量，我们把原问题中的变量和系数拆分为两部分，拆分后的表述如下表所示。
 
@@ -384,9 +389,9 @@ $$
 
 
 $$
-\begin{alignat}{2}\max & \quad z=\textbf{c}_{BV}\textbf{x}_{BV}+\textbf{c}_{NBV}\textbf{x}_{NBV}
-\\\\\text{s.t.} & \quad B\textbf{x}_{BV}+N\textbf{X}_{NBV} = \textbf{b} 
-\\\\ & \quad \textbf{x}_{BV}, \textbf{x}_{NBV} \geq 0   
+\begin{alignat}{2}\max & \quad z=\textbf{c}_{BV}\textbf{x}_{BV}+\textbf{c}_{NBV}\textbf{x}_{NBV} \nonumber
+\\\\\text{s.t.} & \quad B\textbf{x}_{BV}+N\textbf{X}_{NBV} = \textbf{b} \nonumber
+\\\\ & \quad \textbf{x}_{BV}, \textbf{x}_{NBV} \geq 0   \nonumber
 \end{alignat}
 $$
 
@@ -401,10 +406,10 @@ $$
 
 
 $$
-\begin{alignat}{2}\max & \quad z=\textbf{c}_{BV}(B^{-1}\textbf{b}-B^{-1}N\textbf{x}_{NBV})+\textbf{c}_{NBV}\textbf{x}_{NBV} 
-\\\\ & \quad \quad = \textbf{c}_{BV}B^{-1}\textbf{b}-(\textbf{c}_{BV}B^{-1}N-\textbf{c}_{NBV})\textbf{x}_{NBV}
-\\\\\text{s.t.}&\quad \textbf{x}_{BV}+B^{-1}N\textbf{X}_{NBV} = B^{-1}\textbf{b} 
-\\\\ & \quad \textbf{x}_{BV}, \textbf{x}_{NBV} \geq 0   
+\begin{alignat}{2}\max & \quad z=\textbf{c}_{BV}(B^{-1}\textbf{b}-B^{-1}N\textbf{x}_{NBV})+\textbf{c}_{NBV}\textbf{x}_{NBV}  \nonumber
+\\\\ & \quad \quad = \textbf{c}_{BV}B^{-1}\textbf{b}-(\textbf{c}_{BV}B^{-1}N-\textbf{c}_{NBV})\textbf{x}_{NBV} \nonumber
+\\\\\text{s.t.}&\quad \textbf{x}_{BV}+B^{-1}N\textbf{x}_{NBV} = B^{-1}\textbf{b} \nonumber
+\\\\ & \quad \textbf{x}_{BV}, \textbf{x}_{NBV} \geq 0   \nonumber
 \\\\\end{alignat}
 $$
 上述线性规划中的参数如下：
