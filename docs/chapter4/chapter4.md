@@ -392,7 +392,7 @@ $$
 
 
 $$
-\begin{alignat}{2}\max & \quad  z=\textbf{c}_{BV}\textbf{x}_{BV}+\textbf{c}_{NBV}\textbf{x}_{NBV}  \nonumber
+\begin{alignat}{2}\max & \quad  z=\textbf{cx}   \nonumber
 \\\\\text{s.t.} & \quad A\textbf{x} \le \textbf{b} \nonumber
 \\\\ & \quad \textbf{x} \geq 0 \nonumber 
 \end{alignat}
