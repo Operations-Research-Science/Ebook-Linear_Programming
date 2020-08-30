@@ -392,13 +392,13 @@ $$
 
 
 $$
-\begin{alignat}{2}\max & \quad z=\textbf{c}_{BV}\textbf{x}_{BV}+\textbf{c}_{NBV}\textbf{x}_{NBV} \nonumber
-\\\\\text{s.t.} & \quad B\textbf{x}_{BV}+N\textbf{X}_{NBV} = \textbf{b} \nonumber
-\\\\ & \quad \textbf{x}_{BV}, \textbf{x}_{NBV} \geq 0   \nonumber
+\begin{alignat}{2}\max & \quad z=\pmb{c}_{BV}\pmb{x}_{BV}+\pmb{c}_{NBV}\pmb{x}_{NBV} \nonumber
+\\\\\text{s.t.} & \quad B\pmb{x}_{BV}+N\pmb{x}_{NBV} = \pmb{b} \nonumber
+\\\\ & \quad \pmb{x}_{BV}, \pmb{x}_{NBV} \geq 0   \nonumber
 \end{alignat}
 $$
 
-$c_{BV}x_{BV}$
+
 
 约束左乘$B^{-1}$，得到：
 
