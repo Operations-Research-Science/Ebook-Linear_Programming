@@ -65,7 +65,10 @@ $$
 
 那么，最小的上界就是原问题目标函数的最优值。在所有的上界中，我们要找到最小的那一个，这个问题表述出来就是：
 $$
-\begin{alignat}{2}\min\quad  w=\textbf{b}^T\textbf{y}\\\\\text{s.t.}\quad A^T\textbf{y} \ge \textbf{c}^T \\\\\textbf{y} \geq 0  &{}& \\\\\end{alignat}
+\begin{alignat}{2}\min\quad w=\textbf{b}^T\textbf{y}  \nonumber
+\\\\\text{s.t.}\quad A^T\textbf{y} \ge \textbf{c}^T  \nonumber
+\\\\\textbf{y} \geq 0  \nonumber
+\end{alignat}
 $$
 可以发现，**这就是对偶问题的形式**。反之，如果原问题是求目标函数最小化，那么对偶问题就是在寻找原问题目标函数的下界。图4.1可以帮助理解：26是目标函数最优值，两个问题**分别从左右两侧逼近最优值**。
 
@@ -389,9 +392,9 @@ $$
 
 
 $$
-\begin{alignat}{2}\max & \quad z=\textbf{c}_{BV}\textbf{x}_{BV}+\textbf{c}_{NBV}\textbf{x}_{NBV} \nonumber
-\\\\\text{s.t.} & \quad B\textbf{x}_{BV}+N\textbf{X}_{NBV} = \textbf{b} \nonumber
-\\\\ & \quad \textbf{x}_{BV}, \textbf{x}_{NBV} \geq 0   \nonumber
+\begin{alignat}{2}\max & \quad  z=\textbf{cx} \nonumber
+\\\\\text{s.t.} & \quad A\textbf{x} \le \textbf{b} \nonumber
+\\\\ & \quad \textbf{x} \geq 0 \nonumber 
 \end{alignat}
 $$
 
