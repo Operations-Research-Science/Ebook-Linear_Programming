@@ -392,9 +392,9 @@ $$
 
 
 $$
-\begin{alignat}{2}\max & \quad  z=\textbf{c}_{BV} \textbf{x}_{BV}   \nonumber
-\\\\\text{s.t.} & \quad A\textbf{x} \le \textbf{b} \nonumber
-\\\\ & \quad \textbf{x} \geq 0 \nonumber 
+\begin{alignat}{2}\max & \quad z=\textbf{c}_{BV}\textbf{x}_{BV}+\textbf{c}_{NBV}\textbf{x}_{NBV} \nonumber
+\\\\\text{s.t.} & \quad B\textbf{x}_{BV}+N\textbf{X}_{NBV} = \textbf{b} \nonumber
+\\\\ & \quad \textbf{x}_{BV}, \textbf{x}_{NBV} \geq 0   \nonumber
 \end{alignat}
 $$
 
