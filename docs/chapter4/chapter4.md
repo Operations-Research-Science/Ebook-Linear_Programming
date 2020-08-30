@@ -392,14 +392,15 @@ $$
 
 
 $$
-\begin{alignat}{2}\max & \quad  z=\textbf{c}_{BV}   \nonumber
+\begin{alignat}{2}\max & \quad  z=\textbf{c}_{BV} \textbf{x}   \nonumber
 \\\\\text{s.t.} & \quad A\textbf{x} \le \textbf{b} \nonumber
 \\\\ & \quad \textbf{x} \geq 0 \nonumber 
 \end{alignat}
 $$
 
-约束左乘$B^{-1}$，得到：
 
+
+约束左乘$B^{-1}$，得到：
 
 $$
 B^{-1}B\textbf{x}_{BV}+B^{-1}N\textbf{x}_{NBV}=B^{-1}\textbf{b}
