@@ -11,13 +11,13 @@
 $$
 \begin{alignat}{2}
 
-\max\quad & z=\textbf{cx}\\
+\max\quad & z=\textbf{cx}\\\\
 
 \mbox{s.t.}\quad
 
-&A\textbf{x} \le \textbf{b}\\
+&A\textbf{x} \le \textbf{b}\\\\
 
-& \textbf{x} \geq 0  &{}&
+& \textbf{x} \geq 0 
 \end{alignat}
 $$
 
