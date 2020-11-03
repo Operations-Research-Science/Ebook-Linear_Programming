@@ -18,9 +18,11 @@
 
 对这样一个小型算例，我们不妨试着枚举一下，这三种长度的木料（9,14,16）一共可以有多少种满足顾客需求（4,5,7）的切割方式。图5.1列出了13种可行的切割方案$A_j$，$A_j$是个三维的列向量，表示每个方案关于三种需求样式的切割次数，每个切割方案的数量用$x_j$表示（注意，此处仅考虑物料浪费最少的切割方案，故并非所有方案）。L表示每种切割方案所用原材料的长度：L=(9,14,16)T，而C对应每种切割方案的成本：C=(5,9,10)T，与原材料长度相关；*l*表示不同的需求样式：*l*=(4,5,7)T；*d*表示不同样式的需求量：*d*=(30,20,40)T。我们举个例子，切割方案 = (2, 0, 0)T表示原材料9m长的木棒，可被切割成2个4m长的木料。
 
-![](./img/5-1.png)
+<img src="./img/5-1.png"/>
 
 <center>图5.1  满足需求的切割方案</center>
+
+
 
 对该物料切割问题建立线性规划模型：
 
@@ -198,9 +200,11 @@ Subproblem 3:  $A_7$ = (0,0,2)T ,  $\sigma_7 = -1$.
 
 当前子问题的检验数均小于等于0，所以X* = (5,0,0,0,20,20)T是RMP(5.5)的最优解。具体方案如下：方案①：将5根9m长的原材料各切成2个4m,；方案②：将20根14m长的原材料各切成2个7m；方案③：将20根9m长的原材料各切成一个4m和一个5m。
 
-![](./img/5-2.png)
+<img src="./img/5-2.png"/>
 
 <center>图5.2  切方案</center>
+
+
 
 ### 5.1.3 延伸
 
@@ -212,32 +216,27 @@ Subproblem 3:  $A_7$ = (0,0,2)T ,  $\sigma_7 = -1$.
 
 研究方向：运输组织优化
 
-​    在本部分，我们考虑求解具有**特殊结构**的线性规划问题。特别地，我们考虑具有**方块对角**（Block Angular）的线性规划问题，并使用Dantzig-Wolfe分解方法来解决这样的问题。
+在本部分，我们考虑求解具有**特殊结构**的线性规划问题。特别地，我们考虑具有**方块对角**（Block Angular）的线性规划问题，并使用Dantzig-Wolfe分解方法来解决这样的问题。
 
 ### 5.2.1 方块对角线性规划问题的分解
 
-​    考虑具有如下形式的线性规划问题：
+考虑具有如下形式的线性规划问题：
 $$
 \begin{alignat}{2}
-
-\min\quad & \textbf{c}^T \textbf x\\
-
+\min\quad & \textbf{c}^T \textbf x\\\\
 \mbox{s.t.}\quad
-
-&\textbf A\textbf{x} \le \textbf{b}\\
-
+&\textbf A\textbf{x} \le \textbf{b}\\\\
 & \textbf{x} \geq 0  &{}& 
-
 \end{alignat}
 $$
-​    其中$\textbf A$是一个$m\times n$维度的矩阵，并且假设该矩阵能够写成如下的形式：
+其中$\textbf A$是一个$m\times n$维度的矩阵，并且假设该矩阵能够写成如下的形式：
 $$
 \textbf A = 
 \begin{bmatrix}
-   L_1 & L_2 & \cdots & L_K \\
-   A_1 &   \\
-    & A_2 & &\vdots \\
-    && \ddots \\
+   L_1 & L_2 & \cdots & L_K \\\\
+   A_1 &   \\\\
+    & A_2 & &\vdots \\\\
+    && \ddots \\\\
     &&& A_K
   \end{bmatrix}
 $$
@@ -248,67 +247,52 @@ $$
 $$
 \textbf x =
 \begin{bmatrix}
-   \textbf x^1  \\
+   \textbf x^1  \\\\
    \vdots   \\
-    \textbf x^K \\
-   
+    \textbf x^K \\\\
   \end{bmatrix}, \quad 
   \textbf c  =  \begin{bmatrix}
-   \textbf c^1  \\
-   \vdots   \\
-    \textbf c^K \\
-   
+   \textbf c^1  \\\\
+   \vdots   \\\\
+    \textbf c^K \\\\
   \end{bmatrix}, \quad 
    \textbf b  =  \begin{bmatrix}
-   \textbf b^1  \\
-   \vdots   \\
-    \textbf b^K \\
-   
-  \end{bmatrix}. 
+   \textbf b^1  \\\\
+   \vdots   \\\\
+    \textbf b^K \\\\
+  \end{bmatrix}.
 $$
-​    进而，原来的线性规划问题可以写成如下的形式：
+进而，原来的线性规划问题可以写成如下的形式：
 $$
 \begin{alignat}{2}
-
-\min\quad & (\textbf{c}^1)^T \textbf x^1+(\textbf{c}^2)^T \textbf x^2+\cdots+(\textbf{c}^K)^T \textbf x^K \\
-
+\min\quad & (\textbf{c}^1)^T \textbf x^1+(\textbf{c}^2)^T \textbf x^2+\cdots+(\textbf{c}^K)^T \textbf x^K \\\\
 \mbox{s.t.}\quad
-
-&{L}_1 \textbf x^1+L_2 \textbf x^2+\cdots+L_K \textbf x^K \leq \textbf b^0\\
-& A_1 \textbf x^1 \leq \textbf b^1 \\
-&  A_2 \textbf x^2 \leq \textbf b^2 \\
-& \vdots   \\
-& A_K \textbf x^K  \leq \textbf b^K \\
+&{L}_1 \textbf x^1+L_2 \textbf x^2+\cdots+L_K \textbf x^K \leq \textbf b^0\\\\
+& A_1 \textbf x^1 \leq \textbf b^1 \\\\
+&  A_2 \textbf x^2 \leq \textbf b^2 \\\\
+& \vdots   \\\\
+& A_K \textbf x^K  \leq \textbf b^K \\\\
 & \textbf{x}^1,\textbf{x}^2,\cdots,\textbf{x}^K \geq \textbf 0  &{}& 
-
 \end{alignat}
 $$
 或者使用求和算符写成更加紧凑的形式：
 $$
 \begin{alignat}{2}
-
-\min\quad & \sum_{k=1}^K (\textbf{c}^k)^T \textbf x^k \\
-
+\min\quad & \sum_{k=1}^K (\textbf{c}^k)^T \textbf x^k \\\\
 \mbox{s.t.}\quad
-
-&\sum_{k=1}^K L_k \textbf x^k \leq \textbf b^0\\
-& A_k \textbf x^k  \leq \textbf b^k, \quad \forall k=1,\cdots,K. \\
+&\sum_{k=1}^K L_k \textbf x^k \leq \textbf b^0\\\\
+& A_k \textbf x^k  \leq \textbf b^k, \quad \forall k=1,\cdots,K. \\\\
 & \textbf{x}^k \geq \textbf 0, \quad \forall k=1,\cdots,K.  &{}& 
-
 \end{alignat}
 $$
 约束$\sum_{k=1}^K L_k \textbf x^k \leq \textbf b^0$称为**耦合约束**（coupling constraints）或**链接约束**（linking constraints），这种约束的个数为$\textbf b^0$向量的行数，即之前提到的$m_L$。之所以称为耦合约束，是因为如果没有这些约束，那么原来的线性规划问题就可以等价地分解为$K$个独立的子问题（subproblem），其中第$k$个子问题是：
 $$
 (SP_k):\left\{ 
 \begin{alignat}{2}
-
-\min\quad & (\textbf{c}^k)^T \textbf x^k \\
-
+\min\quad & (\textbf{c}^k)^T \textbf x^k \\\\
 \mbox{s.t.}\quad
-
-& A_k \textbf x^k  \leq \textbf b^k \\
+& A_k \textbf x^k  \leq \textbf b^k \\\\
 & \textbf{x}^k \geq \textbf 0  &{}& 
-
 \end{alignat}
 \right.
 $$
@@ -320,14 +304,9 @@ $$
 $$
 (MP):\left\{ 
 \begin{alignat}{2}
-
-\min\quad & \sum_{k=1}^K (\textbf{c}^k)^T \textbf x^k \\
-
+\min\quad & \sum_{k=1}^K (\textbf{c}^k)^T \textbf x^k \\\\
 \mbox{s.t.}\quad
-
-& \sum_{k=1}^K L_k \textbf x^k \leq \textbf b^0 \\
-
-
+& \sum_{k=1}^K L_k \textbf x^k \leq \textbf b^0 \\\\
 \end{alignat}
 \right.
 $$
@@ -350,19 +329,12 @@ $$
 $$
 (MP):\left\{ 
 \begin{alignat}{2}
-
-\min\quad & \sum_{k=1}^K (\textbf{c}^k)^T (\sum_{i=1}^{N_k} \lambda_i^k\textbf v^k_i + \sum_{j=1}^{l_k} \mu_j^k\textbf d^k_j) \\
-
+\min\quad & \sum_{k=1}^K (\textbf{c}^k)^T (\sum_{i=1}^{N_k} \lambda_i^k\textbf v^k_i + \sum_{j=1}^{l_k} \mu_j^k\textbf d^k_j) \\\\
 \mbox{s.t.}\quad
-
-& \sum_{k=1}^K L_k (\sum_{i=1}^{N_k} \lambda_i^k\textbf v^k_i + \sum_{j=1}^{l_k} \mu_j^k\textbf d^k_j) \leq \textbf b^0 \\
-
-& \sum_{i=1}^{N_k}\lambda_i^k=1, \quad  k=1,\cdots,K. \\
-
-& \lambda_i^k \geq 0, \quad  i=1,\cdots,N_k,  k=1,\cdots,K.\\
-
+& \sum_{k=1}^K L_k (\sum_{i=1}^{N_k} \lambda_i^k\textbf v^k_i + \sum_{j=1}^{l_k} \mu_j^k\textbf d^k_j) \leq \textbf b^0 \\\\
+& \sum_{i=1}^{N_k}\lambda_i^k=1, \quad  k=1,\cdots,K. \\\\
+& \lambda_i^k \geq 0, \quad  i=1,\cdots,N_k,  k=1,\cdots,K.\\\\
 & \mu_j^k \geq 0, \quad  j=1,\cdots,l_k,  k=1,\cdots,K.
-
 \end{alignat}
 \right.
 $$
@@ -370,19 +342,12 @@ $$
 $$
 (MP):\left\{ 
 \begin{alignat}{2}
-
-\min\quad & \sum_{k=1}^K \sum_{i=1}^{N_k} \lambda_i^k (\textbf{c}^k)^T ( \textbf v^k_i ) + \sum_{k=1}^K \sum_{j=1}^{l_k} \mu_j^k (\textbf{c}^k)^T ( \textbf d^k_j) \\
-
+\min\quad & \sum_{k=1}^K \sum_{i=1}^{N_k} \lambda_i^k (\textbf{c}^k)^T ( \textbf v^k_i ) + \sum_{k=1}^K \sum_{j=1}^{l_k} \mu_j^k (\textbf{c}^k)^T ( \textbf d^k_j) \\\\
 \mbox{s.t.}\quad
-
-& \sum_{k=1}^K \sum_{i=1}^{N_k} \lambda_i^k (L_k \textbf v^k_i)+\sum_{k=1}^K \sum_{j=1}^{l_k} \mu_j^k (L_k \textbf d^k_j) \leq \textbf b^0 \\
-
-& \sum_{i=1}^{N_k}\lambda_i^k=1, \quad  k=1,\cdots,K. \\
-
-& \lambda_i^k \geq 0, \quad  i=1,\cdots,N_k,  k=1,\cdots,K.\\
-
+& \sum_{k=1}^K \sum_{i=1}^{N_k} \lambda_i^k (L_k \textbf v^k_i)+\sum_{k=1}^K \sum_{j=1}^{l_k} \mu_j^k (L_k \textbf d^k_j) \leq \textbf b^0 \\\\
+& \sum_{i=1}^{N_k}\lambda_i^k=1, \quad  k=1,\cdots,K. \\\\
+& \lambda_i^k \geq 0, \quad  i=1,\cdots,N_k,  k=1,\cdots,K.\\\\
 & \mu_j^k \geq 0, \quad  j=1,\cdots,l_k,  k=1,\cdots,K.
-
 \end{alignat}
 \right.
 $$
@@ -394,19 +359,12 @@ $$
 $$
 (MP):\left\{ 
 \begin{alignat}{2}
-
-\min\quad & \sum_{k=1}^K \sum_{i=1}^{N_k} \lambda_i^k f^k_i + \sum_{k=1}^K \sum_{j=1}^{l_k} \mu_j^k f^{-k}_j \\
-
+\min\quad & \sum_{k=1}^K \sum_{i=1}^{N_k} \lambda_i^k f^k_i + \sum_{k=1}^K \sum_{j=1}^{l_k} \mu_j^k f^{-k}_j \\\\
 \mbox{s.t.}\quad
-
-& \sum_{k=1}^K \sum_{i=1}^{N_k} \lambda_i^k q^k_i+\sum_{k=1}^K \sum_{j=1}^{l_k} \mu_j^k q^{-k}_j \leq \textbf b^0 \\
-
-& \sum_{i=1}^{N_k}\lambda_i^k=1, \quad  k=1,\cdots,K. \\
-
-& \lambda_i^k \geq 0, \quad  i=1,\cdots,N_k,  k=1,\cdots,K.\\
-
+& \sum_{k=1}^K \sum_{i=1}^{N_k} \lambda_i^k q^k_i+\sum_{k=1}^K \sum_{j=1}^{l_k} \mu_j^k q^{-k}_j \leq \textbf b^0 \\\\
+& \sum_{i=1}^{N_k}\lambda_i^k=1, \quad  k=1,\cdots,K. \\\\
+& \lambda_i^k \geq 0, \quad  i=1,\cdots,N_k,  k=1,\cdots,K.\\\\
 & \mu_j^k \geq 0, \quad  j=1,\cdots,l_k,  k=1,\cdots,K.
-
 \end{alignat}
 \right.
 $$
@@ -416,15 +374,10 @@ $$
 $$
 (MP):\left\{ 
 \begin{alignat}{2}
-
-\min\quad & \textbf f^T_v \boldsymbol \lambda + \textbf f^T_d \boldsymbol \mu \\
-
+\min\quad & \textbf f^T_v \boldsymbol \lambda + \textbf f^T_d \boldsymbol \mu \\\\
 \mbox{s.t.}\quad
-
-& \textbf Q_v \boldsymbol \lambda + \textbf Q_d \boldsymbol \mu  + \textbf s = \textbf r \\
-
-& \boldsymbol{\lambda} \geq \textbf 0, \boldsymbol \mu \geq \textbf 0, \textbf s \geq \textbf 0 \\
-
+& \textbf Q_v \boldsymbol \lambda + \textbf Q_d \boldsymbol \mu  + \textbf s = \textbf r \\\\
+& \boldsymbol{\lambda} \geq \textbf 0, \boldsymbol \mu \geq \textbf 0, \textbf s \geq \textbf 0 \\\\
 \end{alignat}
 \right.
 $$
@@ -474,23 +427,23 @@ $$
 ​	假设当前限制主问题的基为$\textbf B$，令$\boldsymbol \pi^T=\textbf f^T_B \textbf B^{-1}$，其中$\textbf f_B$由与基变量$\lambda^k_i$、$\mu_j^k$对应的$f^k_i$、$f^{-k}_j$组成.假定$\boldsymbol\pi$的元素为如下形式：
 $$
 \boldsymbol\pi =
-\begin{bmatrix} \boldsymbol\pi^1  \\ 
-\pi^2_1 \\
-\pi^2_2 \\
-\vdots \\
+\begin{bmatrix} \boldsymbol\pi^1  \\\\
+\pi^2_1 \\\\
+\pi^2_2 \\\\
+\vdots \\\\
 \pi^2_K
 \end{bmatrix}
 $$
 ​	其中$\boldsymbol\pi^1$是对应耦合约束的对偶变量，$\pi^2_i$是在限制主问题中对应于子问题$SP_i$的凸约束的对偶变量，进而，非基变量$\lambda^k_i$的检验数为
 $$
-r^k_i=f^k_i-\boldsymbol \pi^T \begin{bmatrix} \boldsymbol q_i^k  \\ 
+r^k_i=f^k_i-\boldsymbol \pi^T \begin{bmatrix} \boldsymbol q_i^k  \\\\
 \textbf e_k \\ \end{bmatrix} = 
 (\textbf c^k)^T(\textbf v^k_i) - (\boldsymbol \pi^1)^T L_k \boldsymbol v^k_i - \pi^k_2
 $$
 ​	非基变量$\mu^k_j$的检验数为
 $$
 r^{-k}_j = f^{-k}_j - \boldsymbol \pi^T
- \begin{bmatrix} \boldsymbol q_j^{-k}  \\ 
+ \begin{bmatrix} \boldsymbol q_j^{-k}  \\\\ 
 \textbf 0 \\ \end{bmatrix} = 
 (\textbf c^k)^T(\textbf d^k_j) - (\boldsymbol \pi^1)^T L_k \boldsymbol d^k_j
 $$
@@ -510,14 +463,10 @@ $$
 $$
 (SP_k):\left\{ 
 \begin{alignat}{2}
-
-\min\quad & \sigma_k=\left ((\textbf c^k)^T - (\boldsymbol \pi^1)^T L_k  \right ) \textbf x^k \\
-
+\min\quad & \sigma_k=\left ((\textbf c^k)^T - (\boldsymbol \pi^1)^T L_k  \right ) \textbf x^k \\\\
 \mbox{s.t.}\quad
-
-& A_k \textbf x^k  \leq \textbf b^k \\
+& A_k \textbf x^k  \leq \textbf b^k \\\\
 & \textbf{x}^k \geq \textbf 0  &{}& 
-
 \end{alignat}
 \right.
 $$
@@ -529,9 +478,9 @@ $$
 
 ​	(1)如果所有子问题都是有界的，并且 $r_{\text{min}}<0$，令$t$是$r^k_*$取得最小的标号，即$r_{\text{min}}=r^t_*$。对应于子问题$SP_t$的最优极点$\textbf v^t_{i^*}$的列
 $$
-\begin{bmatrix} \boldsymbol q_i^t  \\ 
+\begin{bmatrix} \boldsymbol q_i^t  \\\\
 \textbf e_t \\ \end{bmatrix} =
-\begin{bmatrix} L_t \boldsymbol v_{i^*}^t  \\ 
+\begin{bmatrix} L_t \boldsymbol v_{i^*}^t  \\\\
 \textbf e_t \\ \end{bmatrix}
 $$
 将会进入基$\textbf B$(basis)。
@@ -540,9 +489,9 @@ $$
 
 ​	(3)如果这里有至少一个子问题是**无界的**（unbounded），令$s$是子问题无界的标号，即子问题$SP_s$无界.此时修正单纯形法对应于子问题$SP_s$会返回一个满足$((\textbf c^s)^T-(\boldsymbol \pi^1)^T L_s)\textbf d^s_{j^*}<0$的极方向$\textbf d^s_{j^*}$，其中 $j^*\in \{1,\cdots,l_s\}$，并且对应于$\mu^s_{j^*}$的列   
 $$
-\begin{bmatrix} \boldsymbol q_{j^*}^{-s}  \\ 
+\begin{bmatrix} \boldsymbol q_{j^*}^{-s}  \\\\ 
 \textbf 0 \\ \end{bmatrix} =
-\begin{bmatrix} L_s\boldsymbol d_{j^*}^{s}  \\ 
+\begin{bmatrix} L_s\boldsymbol d_{j^*}^{s}  \\\\
 \textbf 0 \\ \end{bmatrix}
 $$
 
@@ -563,14 +512,10 @@ $$
 $$
 (SP_k):\left\{ 
 \begin{alignat}{2}
-
-\min\quad & \sigma_k=\left ((\textbf c^k)^T - (\boldsymbol \pi^1)^T L_k  \right ) \textbf x^k \\
-
+\min\quad & \sigma_k=\left ((\textbf c^k)^T - (\boldsymbol \pi^1)^T L_k  \right ) \textbf x^k \\\\
 \mbox{s.t.}\quad
-
-& A_k \textbf x^k  \leq \textbf b^k \\
+& A_k \textbf x^k  \leq \textbf b^k \\\\
 & \textbf{x}^k \geq \textbf 0  &{}& 
-
 \end{alignat}
 \right.
 $$
@@ -581,20 +526,20 @@ $$
 ​	**Step 3**：列生成。如果所有子问题$SP_k$都是有界的，并且$r_{\text{min}} < 0$，那么令$t$为指标，该指标满足：$r_{\text{min}} = r^t_{*}$。令
 $$
 \boldsymbol {\bar a} =
-\begin{bmatrix} \boldsymbol q_{i^*}^t  \\ 
+\begin{bmatrix} \boldsymbol q_{i^*}^t  \\\\ 
 \textbf e_t \\ \end{bmatrix} =
-\begin{bmatrix} L_t \boldsymbol v_{i^*}^t  \\ 
+\begin{bmatrix} L_t \boldsymbol v_{i^*}^t  \\\\ 
 \textbf e_t \\ \end{bmatrix}
 $$
 其中$\textbf v^t_{i^*}$是子问题$SP_t$的最优极点，并进入Step 4。
 
-​	否则存在一个子问题$SP_s$是无界的，那么会有极方向$\textbf d^s_{j^*}$生成，该极方向满足$((\textbf c^s)^T-(\boldsymbol \pi^1)^T L_s)\textbf d^s_{j^*}<0$，并且令
+否则存在一个子问题$SP_s$是无界的，那么会有极方向$\textbf d^s_{j^*}$生成，该极方向满足$((\textbf c^s)^T-(\boldsymbol \pi^1)^T L_s)\textbf d^s_{j^*}<0$，并且令
 $$
 \boldsymbol {\bar a}
 =
-\begin{bmatrix} \boldsymbol q_{j^*}^{-s}  \\ 
+\begin{bmatrix} \boldsymbol q_{j^*}^{-s}  \\\\ 
 \textbf 0 \\ \end{bmatrix} =
-\begin{bmatrix} L_s\boldsymbol d_{j^*}^{s}  \\ 
+\begin{bmatrix} L_s\boldsymbol d_{j^*}^{s}  \\\\ 
 \textbf 0 \\ \end{bmatrix}
 $$
 进入Step 4。
