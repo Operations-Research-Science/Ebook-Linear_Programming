@@ -7,81 +7,34 @@
 - 第6章 [网络流问题](https://github.com/Operations-Research-Science/Ebook-Linear_Programming/blob/master/docs/chapter6/chapter6.md)
 - 第7章 [优化求解器及其比较](https://github.com/Operations-Research-Science/Ebook-Linear_Programming/blob/master/docs/chapter7/chapter7.md)
 
+## 出品团队
 
+『运筹OR帷幄』公众号作为华人最大的运筹优化|DS|AI社区之一，有着强大的技术背景和丰富的企业资源。公众号以运筹学/优化为基石，积极拓展数据科学/人工智能等相关领域，致力于打造精准&高度垂直的算法和数据社区，聚集领域内优秀学者、企业和优质人群。
 
-## 电子书搬运至Github流程
+2019年1月，我们在公众号发布了线性规划入门电子书的征稿文，反馈影响热烈，最终由7位同学组成作者团队，共同完成了本书的创作。
 
-注：1-4步只需要在第一次搬运时操作一次，后续搬运从第5步开始即可。
+作者：
 
-### 0.md版本准备
+​	李崇楠（第1章、第5.2章）北京交通大学 交通运输规划与管理专业 研究生在读
 
-使用markdown编辑器，如typora，将word版本内容写成md格式。
+​	孙睿晗（第2章） 荷兰阿姆斯特丹大学 人工智能硕士研究生在读
 
-### 1.安装准备
+​	臧永森（第3章） 清华大学 工业工程系 博士在读，戚铭尧老师团队
 
-安装MathJax Plugin for Github插件（https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima?hl=en）。
+​	翁欣（第4章） 清华大学 博士在读
 
-安装github桌面版和git。
+​	阎泳楠（第5.1章、第6章） 同济大学 交通运输工程 硕士研究生
 
-### 2.找到协作项目
+​	魏晓阳（第7章） 新加坡国立大学 土木与环境工程系 博士生在读
 
-打开github网页版，关注“Operations-Research-Science”账号，打开Ebook-Linear_Programming项目
-（https://github.com/Operations-Research-Science/Ebook-Linear_Programming）
+在编写过程中，编者参阅了许多国内外的优秀运筹学教材，在此对参阅教材的编者表示衷心感谢。
 
-### 3.复制项目到自己的账号下
+## 修改意见
 
-点击fork
+由于编者水平有限，书中内容定有许多不足，本电子书项目会长期维护，欢迎各位读者朋友提出宝贵修改意见&参与修改！
 
-![](./img/readme-1.png)
+向我们提出意见的方式包括：
 
-### 4.复制项目到本地
+① Github平台，pull requests, issues （强烈推荐）
 
-打开Github Desktop, 左上角File-Clone Repository，选择Ebook-Linear_Programming项目。
-
-![](./img/readme-2.png)
-
-### 5.同步主账号内容到本地
-
-其他人也可能向主账号提交了修改，需要及时把最新的版本同步到自己账号上。
-
-打开cmd，切换到本地项目所在的文件夹。按序输入以下3个命令：
-
-git fetch upstream
-
-git merge upstream/master
-
-git push origin master
-
-![](./img/readme-3.png)
-
-![](./img/readme-4.png)
-
-![](./img/readme-5.png)
-
-### 6.本地编辑内容
-
-成功后，可以在本地文件夹里看到对应章节的md文件，替换为之前写好的文件。
-
-![](./img/readme-6.png)
-
-![](./img/readme-7.png)
-
-### 7.本地提交修改
-
-在Github Desktop左侧可以查看到修改记录，左下角填写对此次修改内容的说明后，先点击"Commit to master"，再点击"Fetch origin (Push Origin)"。
-
-![](./img/readme-8.png)
-
-### 8.提交修改到主账号
-
-打开Github网页版，可以看到更新内容。点击Pull requests-New pull request-Create pull request, 再次填写本次修改说明，点击Create pull request。
-
-![](./img/readme-9.png)
-
-![](./img/readme-10.png)
-
-![](./img/readme-11.png)
-
-![](./img/readme-12.png)
-
-等待主账号通过修改申请，
+② 发送至邮箱operations_r@163.com

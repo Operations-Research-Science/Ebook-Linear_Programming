@@ -12,17 +12,17 @@
 
 如果一个集合$C$是凸集,那么我们可以说，对于集合内任意两点$x$、$y$，$z=\theta x+（1-\theta)y$ 也在$C$里面。注意到，当$\theta$等于0的时候，$z = y$, 当$\theta$等于1的时候, $z = x$, 也就是说从几何角度来理解z是一条连接$x$和$y$的线段。从这种角度来理解凸集，我们可以想象对于凸集内任意两点的连线仍在此凸集内。如下两幅图可以很直观的说明这个概念。 
 
-<img src="./img/2-1.png" style="zoom:80%;" align="left"/>  <img src="./img/2-2.png"  align="right" style="zoom:80%;" />
+<img src="./img/2-1.png" style="zoom:80%;"/>
+
+<center>图2.1 正五边形</center>
 
 
 
+<img src="./img/2-2.png" style="zoom:80%;" />
+
+<center>图2.2 五角星</center>
 
 
-
-
-
-
-​                  图2.1 正五边形                                                             图2.2 五角星
 
 对于图2.2五角星来说，存在两点，它们之间的连线并不在五角星内，所以五角星不是凸集。而图2.1正五边形则很明显是一个凸集。
 
@@ -72,6 +72,8 @@ $$
 
 <center>图2.3 二维空间的空间多面体（阴影部分）</center>
 
+
+
 ### 2.2.2 多面体和锥(Polytopes and Cones)
 
 多面体就是一个有界的空间多面体，也就是说多面体是空间多面体的一个特殊情况，空间多面体会出现有界限、无限延伸的情况，但多面体不会（见图2.4）。
@@ -80,11 +82,17 @@ $$
 
 **定义**：如果$x\in C$，对于任何 $λ\ge0$，$λx\in C$。
 
-<img src="./img/2-1.png" style="zoom:80%;" align="left"/>  
+<img src="./img/2-1.png" style="zoom:80%;"/>
 
-​                     <img src="./img/2-5.png" alt="img" style="zoom:80%;" /> 
+<center>图2.4 多面体为有界空间多面体</center>
 
-​           图2.4 多面体为有界空间多面体         图2.5 两条从原点引出的射线组成一个锥
+
+
+<img src="./img/2-5.png" alt="img" style="zoom:80%;" />
+
+<center>图2.5 两条从原点引出的射线组成一个锥</center>
+
+
 
 类似于凸集有凸组合(convex combination)，锥也有锥组合(conic combination)。$k$个$n$维向量$x_k$的锥组合可以写为： 
 $$
@@ -105,6 +113,8 @@ $$
 ![img](./img/2-6.png)
 
 <center>图2.6  o为极点，a,b为锥的两个极方向</center>
+
+
 
 ### 2.3.2 极点的特性
 
